@@ -27,7 +27,7 @@ namespace _1DV402.S2.L1A
             {
                 if (number == _number)//rätt
                 {
-                    Console.WriteLine("Rätt gissat! Det hemliga numret var {0}!", _number);
+                    Console.WriteLine("Rätt gissat på {0}:e försöket! Det hemliga numret var {1}!", (_count + 1), _number);
                     _count = 0;
                     return true;
                 }
@@ -42,13 +42,13 @@ namespace _1DV402.S2.L1A
                 }
                 if (number < _number) //fel lågt
                 {
-                    Console.WriteLine("Fel! {0} är för lågt. Du har {1} gissningar kvar.", number, MaxNumberOfGuesses - _count);
+                    Console.WriteLine("Fel! {0} är för lågt. Du har {1} gissningar kvar.", number, MaxNumberOfGuesses - (_count + 1));
                     _count++;
                     return false;
                 }
                 if (number > _number) //fel högt
                 {
-                    Console.WriteLine("Fel! {0} är för högt. Du har {1} gissningar kvar.", number, MaxNumberOfGuesses - _count);
+                    Console.WriteLine("Fel! {0} är för högt. Du har {1} gissningar kvar.", number, MaxNumberOfGuesses - (_count + 1));
                     _count++;
                     return false;
                 }
